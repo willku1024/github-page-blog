@@ -1,4 +1,4 @@
-base_url = "https://example.com"
+base_url = "/"
 compile_sass = true
 build_search_index = false
 default_language = "en"
