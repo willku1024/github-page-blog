@@ -8,16 +8,16 @@ highlight_code = true
 highlight_theme = "base16-ocean-dark"
 
 [languages.en]
-title = "Anatole"
-description = "A other zola theme"
+title = "willcool4ever"
+description = "Think different. Make a difference!"
 generate_feeds = true
 taxonomies = [
     {name = "tags"},
 ]
 
 [languages.zh]
-title = "Anatole"
-description = "A other zola theme"
+title = "willcool4ever"
+description = "Think different. Make a difference!"
 generate_feeds = true
 taxonomies = [
     {name = "tags"},
