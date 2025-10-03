@@ -16,8 +16,8 @@ taxonomies = [
 ]
 
 [languages.zh]
-title = "willcool4ever"
-description = "Think different. Make a difference!"
+title = "少言才不会咸"
+description = "诚者先知"
 generate_feeds = true
 taxonomies = [
     {name = "tags"},
@@ -46,12 +46,12 @@ next_page = "下一页"
 last_page = "上一页"
 
 [extra.social]
-github = ""
-twitter = "w"
+github = "https://github.com/willku1024/"
+twitter = ""
 facebook = ""
-instagram = "r"
-dribbble = "t"
-weibo = "y"
+instagram = ""
+dribbble = ""
+weibo = ""
 linkedin = ""
 flickr = ""
 
