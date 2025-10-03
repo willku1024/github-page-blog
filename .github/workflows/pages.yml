@@ -1,0 +1,58 @@
+name: Deploy Zola to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write      #
+  id-token: write   #
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 配置 Pages（官方动作）
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 安装 Zola（二选一，推荐【A】更快）
+      # A) 直接下载预编译二进制（改成你需要的版本号）
+      - name: Install Zola
+        run: |
+          ZOLA_VERSION=0.21.0
+          curl -sSL https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz \
+            | tar -xz
+          sudo mv zola /usr/local/bin/zola
+
+      # B) 或者用 cargo 安装（更慢）
+      # - uses: dtolnay/rust-toolchain@stable
+      # - run: cargo install zola
+
+      - name: Build site
+        run: zola build  # 输出在 ./public
+
+      # 把 ./public 打包成 Pages 工件（官方动作）
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
