@@ -20,12 +20,12 @@ tags = ["machine learning"]
 
 ### 图示
 
-<img src="/images/adaboost01.png">
+<img src="/images/adaboost01.png" width="80%">
 
 ---
 
-<img src="/images/adaboost03.png" >
+<img src="/images/adaboost03.png" width="80%">
 
 ---
 
-<img src="/images/adaboost02.png">
+<img src="/images/adaboost02.png" width="80%">

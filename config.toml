@@ -54,6 +54,7 @@ dribbble = ""
 weibo = ""
 linkedin = ""
 flickr = ""
+csdn = "sinat_29173167"
 
 [extra.show]
 tags = true

@@ -308,10 +308,10 @@ img {
     list-style: none;
     padding: 0;
     font-size: 14px;
-    text-align: center;
+    // text-align: center;
 
     li {
-      display: inline;
+      display: inline-block;
       padding: 0 4px;
       line-height: 0;
     }
