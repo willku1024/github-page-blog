@@ -59,3 +59,4 @@ csdn = "sinat_29173167"
 [extra.show]
 tags = true
 links = false
+about = false
