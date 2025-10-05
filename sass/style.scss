@@ -879,7 +879,21 @@ html.theme--light {
 
       a.current {
         color: #5A5A5A;
-        border-bottom: 1px solid #5A5A5A;
+        padding-bottom: 20px;
+        position: relative;
+        border-bottom: none; // 移除下划线指示
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 10px; // 控制圆点与文字距离
+          transform: translateX(-50%);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #4785d6af; // 使用文字颜色
+        }
       }
     }
 
@@ -954,7 +968,7 @@ html.theme--light {
       img {
         display: block;
         margin: 0 auto;
-        // border: lightcyan 15px solid;
+        border: #4785d65f 8px solid;
         border-radius: 10px;
         scale: 0.80;
       }
@@ -1021,7 +1035,7 @@ html.theme--light {
   }
 
   .pagination {
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 0px solid #f2f2f2;
   }
 
   #disqus_thread {
@@ -1187,10 +1201,6 @@ html.theme--dark {
         color: #4786D6;
       }
 
-      a.current {
-        color: #eeeeee;
-        border-bottom: 1px solid #eeeeee;
-      }
     }
 
     .information #language-switch {
@@ -1318,7 +1328,7 @@ html.theme--dark {
   }
 
   .pagination {
-    border-bottom: 1px solid #464646;
+    border-bottom: 0px solid #464646;
   }
 
   #disqus_thread {

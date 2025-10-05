@@ -39,6 +39,7 @@
         </div>
       </section>
     {% endfor %}
+    {% if paginator.next %}
     <div class="pagination">
 		  <ul class="clearfix">
         {% if paginator.next %}
@@ -57,4 +58,5 @@
         {% endif %}
       </ul>
     </div>
+    {% endif %}
 {% endblock content %}
