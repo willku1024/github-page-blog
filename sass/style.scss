@@ -814,6 +814,12 @@ a.btn {
 
   .post-title h3 {
     line-height: 1.6;
+
+    // 新增：允许在长串中换行
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word; // 若仍不生效可改为 break-all
+    hyphens: auto;
   }
 
   .content {
