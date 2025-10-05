@@ -954,7 +954,9 @@ html.theme--light {
       img {
         display: block;
         margin: 0 auto;
-        border: lightblue 50px solid;
+        // border: lightcyan 15px solid;
+        border-radius: 10px;
+        scale: 0.80;
       }
 
       a {
