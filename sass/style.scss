@@ -564,10 +564,50 @@ img {
     padding: 0;
 
     .listing-post {
+      // --- Modified: use flex to separate long title and time without overlap ---
       padding-bottom: 5px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px; // space between title and time
+
+      // Title link (assumes structure: <li class="listing-post"><a>Title</a><span class="post-time">...)
+      > a {
+        flex: 1 1 auto;
+        min-width: 0; // allow flex item to shrink for ellipsis
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; // single-line with ellipsis on wide screens
+        overflow-wrap: anywhere; // break extremely long unspaced strings
+      }
 
       .post-time {
-        float: right;
+        flex: 0 0 auto;
+        margin-left: auto; // push time to the far right
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+        float: none; // override legacy float
+      }
+    }
+  }
+
+  // Responsive: stack time below title on narrow screens & allow title wrapping
+  @media (max-width: 560px) {
+    .listing {
+      .listing-post {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+
+        > a {
+          white-space: normal; // allow wrapping on small screens
+          text-overflow: initial;
+        }
+
+        .post-time {
+          margin-left: 0;
+          opacity: 0.75;
+          font-size: 12px;
+        }
       }
     }
   }
