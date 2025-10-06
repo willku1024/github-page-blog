@@ -22,12 +22,12 @@ tags = ["Machine Learning"]
 
 ### 图示
 
-<img src="/images/bagging01.png" style="width: 50%">
+<img src="/images/bagging01.png" style="width: 50%" alt>
 
 ---
 
-<img src="/images/bagging02.png" style="width: 50%">
+<img src="/images/bagging02.png" style="width: 50%" alt>
 
 ---
 
-<img src="/images/bagging03.png" style="width: 50%">
+<img src="/images/bagging03.png" style="width: 50%" alt>

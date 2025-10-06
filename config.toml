@@ -6,6 +6,12 @@ default_language = "zh"
 [markdown]
 highlight_code = true
 highlight_theme = "base16-ocean-dark"
+smart_punctuation = true
+render_emoji = true
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+insert_anchor_links = "right"
 
 [languages.en]
 title = "willcool4ever"

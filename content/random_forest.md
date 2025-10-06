@@ -17,9 +17,9 @@ tags = ["Machine Learning"]
 
 ### 图示
 
-<img src="/images/random_forest02.png" style="width: 50%">
+<img src="/images/random_forest02.png" style="width: 50%" alt>
 
 ---
 
-<img src="/images/random_forest01.png" style="width: 50%">
+<img src="/images/random_forest01.png" style="width: 50%" alt>
 
