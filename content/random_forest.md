@@ -3,7 +3,7 @@ title = "Random_Forest"
 template = "page.html"
 date = 2025-10-03T15:00:00Z
 [taxonomies]
-tags = ["machine learning"]
+tags = ["Machine Learning"]
 [extra]
 +++
 
