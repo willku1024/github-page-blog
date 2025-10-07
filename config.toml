@@ -67,5 +67,10 @@ tags = true
 links = false
 about = false
 
-[extra.comment]
-github = true
+
+[extra.comment.valine]
+appid = "HqSWXpG5bbf2JYkERThMsCg3-gzGzoHsz"
+appkey = "kvaM4PTHFmQrOzzJr0M7nfTw"
+placeholder = "Do you have any idea?"
+avatar = "hide"
+visitor = true
