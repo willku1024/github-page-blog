@@ -23,7 +23,7 @@
         {% endfor %}
         {% endif %}
         {% if config.extra.comment.valine.visitor %}
-            <span id="{{ page.permalink | trim_start_matches(pat=config.base_url) | slugify }}" class="leancloud_visitors"
+            <span id="{{ page.path | replace(from='.md', to='') }}" class="leancloud_visitors"
               data-flag-title="{{ page.title }}">
               <i class="fas fa-fire"></i>
               <span class="leancloud-visitors-count"></span>
