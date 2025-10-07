@@ -1,5 +1,6 @@
 html {
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* 防止整个页面横向滚动 */
 }
 
 body {
@@ -8,6 +9,7 @@ body {
   width: 100%;
   margin: 0 auto 30px auto;
   line-height: 1.6em;
+  overflow-x: hidden; /* 防止 body 横向滚动 */
 }
 
 p {
@@ -122,6 +124,8 @@ img {
   float: right;
   width: 70%;
   margin-top: 60px;
+  overflow-x: hidden; /* 防止横向滚动 */
+  box-sizing: border-box; /* 确保 padding 和 border 包含在宽度内 */
 }
 
 .page-top {
@@ -321,6 +325,10 @@ img {
 
 .post {
   margin: 30px;
+  max-width: 100%; /* 确保不会超出容器宽度 */
+  box-sizing: border-box; /* 确保 margin 和 padding 包含在宽度内 */
+  overflow-wrap: break-word; /* 长单词换行 */
+  word-wrap: break-word; /* 兼容旧浏览器 */
 
   .post-title {
     h1 {
@@ -394,13 +402,119 @@ img {
     pre {
       padding: 4px 6px;
       border-radius: 6px;
-      overflow: scroll;
+      overflow-x: auto; /* 只允许水平滚动，但限制在容器内 */
+      overflow-y: hidden;
+      max-width: 100%; /* 确保不会超出容器宽度 */
+      box-sizing: border-box;
     }
 
     blockquote {
       box-sizing: border-box;
       margin: 1.6em 0 1.6em -2em;
       padding: 0 0 0 1.6em;
+    }
+
+    table {
+      width: 100%;
+      max-width: 100%; /* 确保表格不会超出容器宽度 */
+      margin: 1.8em 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.95em;
+      background-color: inherit;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+      box-sizing: border-box; /* 确保 padding 和 border 包含在宽度内 */
+
+      caption {
+        padding: 0.75em 1.2em;
+        caption-side: bottom;
+        font-size: 0.85em;
+        text-align: left;
+        opacity: 0.75;
+      }
+
+      thead {
+        font-size: 0.82em;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      th,
+      td {
+        padding: 0.85em 1.2em;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid transparent;
+      }
+
+      th {
+        font-weight: 600;
+      }
+
+      tr:last-child {
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+
+    table tbody tr {
+      transition: background-color 0.2s ease, transform 0.15s ease;
+
+      &:hover {
+        transform: translateX(3px);
+      }
+    }
+
+    table th:not(:first-child),
+    table td:not(:first-child) {
+      border-left: 1px solid transparent;
+    }
+
+    @media (max-width: 640px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        font-size: 0.85em; /* 在小屏幕上减小字体 */
+        margin: 1em 0; /* 增加上下间距 */
+        width: auto; /* 允许表格根据内容调整宽度 */
+        min-width: 300px; /* 设置最小宽度确保可读性 */
+      }
+
+      table th,
+      table td {
+        padding: 0.6em 0.8em; /* 在小屏幕上减少内边距 */
+        min-width: 80px; /* 设置最小宽度防止内容过度压缩 */
+        white-space: nowrap; /* 防止单元格内容换行 */
+      }
+
+      /* 为表格添加滚动提示 */
+      table::after {
+        content: '← 左右滑动查看更多 →';
+        display: block;
+        text-align: center;
+        font-size: 0.7em;
+        opacity: 0.6;
+        margin-top: 0.5em;
+      }
+    }
+
+    /* 更宽泛的移动端表格优化 */
+    @media (max-width: 768px) {
+      table {
+        font-size: 0.9em;
+      }
+
+      table th,
+      table td {
+        padding: 0.7em 1em;
+      }
     }
 
     .footnote-definition {
@@ -868,6 +982,8 @@ a.btn {
     width: 100%;
     z-index: 2;
     position: absolute;
+    overflow-x: hidden; /* 防止横向滚动 */
+    box-sizing: border-box;
   }
 
   .footer {
@@ -1054,6 +1170,42 @@ html.theme--light {
         background: inherit;
         color: inherit;
         border-radius: 0;
+      }
+
+      table {
+        border-color: rgba(71, 134, 214, 0.25);
+        background-color: #ffffff;
+        box-shadow: 0 16px 42px rgba(71, 134, 214, 0.12);
+
+        caption {
+          color: #5f5f5f;
+        }
+
+        thead {
+          background: linear-gradient(135deg, rgba(71, 134, 214, 0.18) 0%, rgba(71, 134, 214, 0.08) 100%);
+          color: #315b8e;
+        }
+
+        th,
+        td {
+          border-bottom-color: rgba(71, 134, 214, 0.16);
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+          border-left-color: rgba(71, 134, 214, 0.12);
+        }
+
+        tbody {
+          tr:nth-child(even) {
+            background-color: rgba(71, 134, 214, 0.06);
+          }
+
+          tr:hover {
+            background-color: rgba(71, 134, 214, 0.16);
+            box-shadow: inset 4px 0 0 rgba(71, 134, 214, 0.35);
+          }
+        }
       }
     }
 
@@ -1348,6 +1500,42 @@ html.theme--dark {
 
       blockquote {
         border-left: #4a4a4a 0.2em solid;
+      }
+
+      table {
+        border-color: rgba(255, 255, 255, 0.12);
+        background-color: rgba(21, 32, 40, 0.95);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6);
+
+        caption {
+          color: rgba(255, 255, 255, 0.65);
+        }
+
+        thead {
+          background: linear-gradient(135deg, rgba(71, 134, 214, 0.35) 0%, rgba(71, 134, 214, 0.2) 100%);
+          color: #f0f6ff;
+        }
+
+        th,
+        td {
+          border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+          border-left-color: rgba(255, 255, 255, 0.04);
+        }
+
+        tbody {
+          tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.04);
+          }
+
+          tr:hover {
+            background-color: rgba(71, 134, 214, 0.28);
+            box-shadow: inset 4px 0 0 rgba(71, 134, 214, 0.6);
+          }
+        }
       }
     }
 
