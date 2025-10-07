@@ -66,3 +66,6 @@ csdn = "sinat_29173167"
 tags = true
 links = false
 about = false
+
+[extra.comment]
+github = true
