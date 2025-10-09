@@ -1,8 +1,8 @@
 
 +++
-title = "DNN CNN Transformer对比"
+title = "DNN CNN Transformer"
 template = "page.html"
-date = 2025-10-07T10:00:00Z
+date = 2025-10-08T10:00:00Z
 [taxonomies]
 tags = ["Machine Learning"]
 [extra]
