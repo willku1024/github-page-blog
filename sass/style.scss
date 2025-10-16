@@ -55,6 +55,12 @@ body {
   overflow-x: hidden;
 }
 
+body hr {
+  border: 0;
+  border-top: 1px solid var(--border-light);
+  margin: var(--spacing-lg) 0;
+}
+
 /* ===== Base Typography & Elements ===== */
 p {
   line-height: 1.9em;
