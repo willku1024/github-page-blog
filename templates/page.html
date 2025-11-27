@@ -19,7 +19,7 @@
         {% if page.taxonomies.tags %}
         <i class="fas fa-tags"></i>
         {% for tag in page.taxonomies.tags %}
-        <a class="tag" href="{{ get_url(path="@/_index.md", lang=lang) }}tags/{{tag}}">&nbsp;{{tag}}</a>
+          <a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag, lang=page.lang) | safe }}">&nbsp;{{tag}}</a>
         {% endfor %}
         {% endif %}
         {% if config.extra.comment.valine.visitor %}
